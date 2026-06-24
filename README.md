@@ -1,5 +1,5 @@
 # project-three
-React API Project
+React API Project - 
 This project is an interactive web app that utilizes an API and React to display requested data to the user.
 
 Link to the site:
