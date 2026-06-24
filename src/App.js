@@ -21,9 +21,7 @@ export default function App() {
   }, []);
 
   function getJoke(category = "dev") {
-    let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
-
-    fetch(url)
+    fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
       .then((response) => response.json())
       .then((data) => setJoke(data.value))
       .catch((error) => console.log(error));
@@ -38,16 +36,22 @@ export default function App() {
   return (
     <div className="App">
       <h1>Chuck Norris Facts</h1>
-      <select value={selectedCategory} onChange={handleCategoryChange}>
-        {categories.map((category) => (
-          <option key={category} value={category}>
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </option>
-        ))}
-      </select>
-      <p>{joke}</p>
-      <button onClick={() => getJoke(selectedCategory)}>Get New Joke</button>
-      <img src="chuck-norris.jpg" alt="Chuck Norris" />
+      <div className="mainContent">
+        <div className="jokeSection">
+          <select value={selectedCategory} onChange={handleCategoryChange}>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </option>
+            ))}
+          </select>
+          <p>{joke}</p>
+          <button onClick={() => getJoke(selectedCategory)}>
+            Get New Joke
+          </button>
+        </div>
+        <img src="chuck-norris.jpg" alt="Chuck Norris" />
+      </div>
       <footer>
         <a href="https://github.com/zhall4/project-three.git" target="_blank">
           Github - Project 3
