@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: linear-gradient(red, blue, green);
+
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  gap: 1rem;
+
+  justify-items: center;
+  padding: 2rem;
+}
+
+button,
+select {
+  height: 3em;
+  width: auto;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+}
